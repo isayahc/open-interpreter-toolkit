@@ -19,7 +19,7 @@ exist an executable file in /home/isayahc/projects/github/open-interpreter-hacka
 the task if there is not then you must make one.
 """ 
 
-interpreter.system_message += """sumary_line
+interpreter.system_message += """
 
 With each question you answer you must check /home/isayahc/projects/github/open-interpreter-hackathon/tool-kit to see
 if there is an executable file that does the task if there is not then you must make one.
@@ -28,7 +28,13 @@ I recommend you make run ls in the tool kit directory
 
 """
 
+# interpreter.system_message += """
+# when writting code make sure not to hardcode values. Instead create command line inter
+# """
 
+interpreter.system_message += """
+when creating scripts make sure to create argeparse command line interface for them. Such that they can be used to solve similar problems in the future.
+"""
 
 # interpreter.system_message = interpreter.system_message + add_to_message
 
