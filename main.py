@@ -1,6 +1,8 @@
-import interpreter
 import os
 import dotenv
+from typing import List
+
+import interpreter
 
 #import dotenv variables
 dotenv.load_dotenv()
@@ -9,11 +11,20 @@ dotenv.load_dotenv()
 
 TOOL_KIT_PATH = os.getenv("TOOL_KIT_PATH")
 
+# Function to add system message
+def add_system_message(interpreter, messages: List[str]) -> None:
+    for message in messages:
+        interpreter.system_message += f"\n{message}"
 
-interpreter.system_message += """
+#To modift the behavior of the interpreter you can add to the system message
+
+
+# List of guidelines and instructions for the interpreter
+guidelines = [
+    f"""
 
 Your goal is the generate a set of executables file stored in 
-/home/isayahc/projects/github/open-interpreter-hackathon/tool-kit 
+{TOOL_KIT_PATH} 
 every function or snippet you make
 you must document what it does and how it works. 
 Also when applicable you make a cli when you make a cli you must document how to use it and what it does.
@@ -22,33 +33,34 @@ Every time you write code you must save it in a .py (never forget the shebang li
 turn that file into an executable file. on my machine.
 
 When given a task please check if there 
-exist an executable file in /home/isayahc/projects/github/open-interpreter-hackathon/tool-kit that does 
+exist an executable file in {TOOL_KIT_PATH} that does 
 the task if there is not then you must make one.
-""" 
+""" ,
+f"""
 
-interpreter.system_message += """
-
-With each question you answer you must check /home/isayahc/projects/github/open-interpreter-hackathon/tool-kit to see
+With each question you answer you must check {TOOL_KIT_PATH} to see
 if there is an executable file that does the task if there is not then you must make one.
 
 I recommend you make run ls in the tool kit directory
 
-"""
-
-# interpreter.system_message += """
-# when writting code make sure not to hardcode values. Instead create command line inter
-# """
-
-interpreter.system_message += """
+""",
+f"""
 when creating scripts make sure to create argeparse command line interface for them. Such that they can be used to solve similar problems in the future.
 when working with cli's do not run directory. for example if there is a cli called hello_world.py, run ./hello_world.py not python3 hello_world.py
-"""
-
-interpreter.system_message += """
+""",
+f"""
 When making cli's make sure to have default arguments for all arguments. Else the this interpreter will break. So please give each
 argument a default value.
 """
 
-# interpreter.system_message = interpreter.system_message + add_to_message
+
+
+]
+
+
+
+
+# Add guidelines to the system message
+add_system_message(interpreter, guidelines)
 
 interpreter.chat()
