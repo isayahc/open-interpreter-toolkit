@@ -37,6 +37,10 @@ when creating scripts make sure to create argeparse command line interface for t
 when working with cli's do not run directory. for example if there is a cli called hello_world.py, run ./hello_world.py not python3 hello_world.py
 """
 
+interpreter.system_message += """
+When making cli's make sure to have default arguments for all arguments.
+"""
+
 # interpreter.system_message = interpreter.system_message + add_to_message
 
 interpreter.chat()
