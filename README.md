@@ -11,4 +11,6 @@
 - Tools are made individually for each machine, and code will be written for that machine
 
 # Example
+![Steps for finding stock price](https://github.com/isayahc/open-interpreter-hackathon/blob/main/assets/readme_example.PNG)
+
 
