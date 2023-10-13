@@ -3,7 +3,7 @@ import interpreter
 
 
 
-add_to_message = """
+interpreter.system_message += """
 
 Your goal is the generate a set of executables file stored in 
 /home/isayahc/projects/github/open-interpreter-hackathon/tool-kit 
@@ -17,8 +17,17 @@ turn that file into an executable file. on my machine.
 When given a task please check if there 
 exist an executable file in /home/isayahc/projects/github/open-interpreter-hackathon/tool-kit that does 
 the task if there is not then you must make one.
+""" 
+
+interpreter.system_message += """sumary_line
+
+With each question you answer you must check /home/isayahc/projects/github/open-interpreter-hackathon/tool-kit to see
+if there is an executable file that does the task if there is not then you must make one.
+
 """
 
-interpreter.system_message = interpreter.system_message + add_to_message
+
+
+# interpreter.system_message = interpreter.system_message + add_to_message
 
 interpreter.chat()
