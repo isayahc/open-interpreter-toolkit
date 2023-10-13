@@ -1,6 +1,13 @@
 import interpreter
+import os
+import dotenv
+
+#import dotenv variables
+dotenv.load_dotenv()
 
 
+
+TOOL_KIT_PATH = os.getenv("TOOL_KIT_PATH")
 
 
 interpreter.system_message += """
