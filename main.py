@@ -34,6 +34,7 @@ I recommend you make run ls in the tool kit directory
 
 interpreter.system_message += """
 when creating scripts make sure to create argeparse command line interface for them. Such that they can be used to solve similar problems in the future.
+when working with cli's do not run directory. for example if there is a cli called hello_world.py, run ./hello_world.py not python3 hello_world.py
 """
 
 # interpreter.system_message = interpreter.system_message + add_to_message
