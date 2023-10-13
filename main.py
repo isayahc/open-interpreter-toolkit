@@ -38,7 +38,8 @@ when working with cli's do not run directory. for example if there is a cli call
 """
 
 interpreter.system_message += """
-When making cli's make sure to have default arguments for all arguments.
+When making cli's make sure to have default arguments for all arguments. Else the this interpreter will break. So please give each
+argument a default value.
 """
 
 # interpreter.system_message = interpreter.system_message + add_to_message
