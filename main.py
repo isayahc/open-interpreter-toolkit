@@ -24,6 +24,8 @@ interpreter.system_message += """sumary_line
 With each question you answer you must check /home/isayahc/projects/github/open-interpreter-hackathon/tool-kit to see
 if there is an executable file that does the task if there is not then you must make one.
 
+I recommend you make run ls in the tool kit directory
+
 """
 
 
