@@ -9,7 +9,7 @@ dotenv.load_dotenv()
 
 
 
-TOOL_KIT_PATH = os.getenv("TOOL_KIT_PATH")
+TOOL_KIT_DIR = os.getenv("TOOL_KIT_DIR")
 
 # Function to add system message
 def add_system_message(interpreter, messages: List[str]) -> None:
@@ -24,7 +24,7 @@ guidelines = [
     f"""
 
 Your goal is the generate a set of executables file stored in 
-{TOOL_KIT_PATH} 
+{TOOL_KIT_DIR} 
 every function or snippet you make
 you must document what it does and how it works. 
 Also when applicable you make a cli when you make a cli you must document how to use it and what it does.
@@ -33,12 +33,12 @@ Every time you write code you must save it in a .py (never forget the shebang li
 turn that file into an executable file. on my machine.
 
 When given a task please check if there 
-exist an executable file in {TOOL_KIT_PATH} that does 
+exist an executable file in {TOOL_KIT_DIR} that does 
 the task if there is not then you must make one.
 """ ,
 f"""
 
-With each question you answer you must check {TOOL_KIT_PATH} to see
+With each question you answer you must check {TOOL_KIT_DIR} to see
 if there is an executable file that does the task if there is not then you must make one.
 
 I recommend you make run ls in the tool kit directory
