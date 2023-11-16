@@ -10,6 +10,11 @@
 - Tools are also able to be expanded upon when needed
 - Tools are made individually for each machine, and code will be written for that machine
 
+# installation 
+
+## python 
+You need at least python3.10 to run open-interpreter
+
 # Example
 ![Steps for finding stock price](https://github.com/isayahc/open-interpreter-hackathon/blob/main/assets/readme_example.PNG)
 
