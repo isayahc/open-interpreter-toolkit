@@ -10,9 +10,9 @@
 - Tools are also able to be expanded upon when needed
 - Tools are made individually for each machine, and code will be written for that machine
 
-# installation 
+# Installation 
 
-## python 
+## Python 
 You need at least python3.10 to run open-interpreter
 
 # Example
